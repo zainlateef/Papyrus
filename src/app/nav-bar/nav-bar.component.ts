@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 })
 export class NavBarComponent implements OnInit {
 
-  @ViewChild("nav_list") menu : ElementRef;
+  @ViewChild("nav__list") menu : ElementRef;
   @ViewChild("burger") burger : ElementRef;
   doc = $(document);
   panel = $('.panel');
@@ -22,7 +22,7 @@ export class NavBarComponent implements OnInit {
   }
 
   openMenu() {
-    alert("hi");
+    console.log("here");
     this.burger.nativeElement.classList.toggle('burger--active');
     this.menu.nativeElement.classList.toggle('nav__list--active');
   }
