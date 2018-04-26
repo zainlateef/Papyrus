@@ -26,6 +26,31 @@ li {
   list-style:none;
 }
 
+#close {
+  float:right;
+  display:inline-block;
+  padding:2px 5px;
+  //background:#ccc;
+}
+
+a.boxclose{
+  float:right;
+  cursor:pointer;
+  color: #fff;
+  border: 1px solid #AEAEAE;
+  border-radius: 15px;
+  background: rgb(0, 0, 0);
+  font-size: 15px;
+  //font-weight: bold;
+  //display: inline-block;
+  line-height: 0px;
+  padding: 7px 3px;       
+}
+
+.boxclose:before {
+  content: "×";
+}
+
 .nav {
   position: fixed;
   z-index: 1;
