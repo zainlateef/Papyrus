@@ -22,6 +22,10 @@ ul {
   margin: 0;
 }
 
+li {
+  list-style:none;
+}
+
 .nav {
   position: fixed;
   z-index: 1;
