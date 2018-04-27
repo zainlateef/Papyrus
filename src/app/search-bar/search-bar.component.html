@@ -1,3 +1,4 @@
 <form>
-    <span class="fa fa-search"><input type="text" class="search rounded" placeholder="Find your friends..."></span>
+    <fa name="search" size="2x" (click)="toggle_searchbar()"></fa>
+    <input *ngIf="show_searchbar" type="text" class="search" placeholder="Find your friends...">
 </form>

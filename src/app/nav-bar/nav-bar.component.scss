@@ -26,6 +26,12 @@ li {
   list-style:none;
 }
 
+fa:hover
+{
+    font-size: 1.6em;
+    transition: 0.08s ease-out;
+}
+
 a.boxclose{
   float:right;
   cursor:pointer;
@@ -50,7 +56,7 @@ a.boxclose{
 {
   float: right;
   margin-top: 15px;
-  margin-right: 15px;
+  margin-right: 70px;
 }
 
 .nav {
@@ -91,10 +97,6 @@ a.boxclose{
     font-size: 24px;
     //background: $nav-bg;
     transition: $ease;
-    
-    // &:hover {
-    //   background: mix(black, $nav-bg, 10);
-    // }
   }
   
   @media (max-width: 640px) {
