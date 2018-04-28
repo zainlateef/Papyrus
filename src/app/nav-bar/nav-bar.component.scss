@@ -26,10 +26,9 @@ li {
   list-style:none;
 }
 
-fa:hover
-{
-    font-size: 1.6em;
-    transition: 0.08s ease-out;
+li:hover fa{
+  font-size: 1.6em;
+  transition: 0.08s ease-out;
 }
 
 a.boxclose{

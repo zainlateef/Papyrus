@@ -10,6 +10,7 @@ export class SearchBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   toggle_searchbar()
