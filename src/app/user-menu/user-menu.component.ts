@@ -6,9 +6,17 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class UserMenuComponent implements OnInit {
   
+  show_menu : boolean;
+
   constructor() { }
 
   ngOnInit() {
+    this.show_menu=false;
+  }
+
+  toggleMenu()
+  {
+    this.show_menu=!this.show_menu;
   }
 
 
