@@ -1,17 +1,16 @@
-@-webkit-keyframes slideIn { from { width: 0px; opacity: 0; } to { width: 300px; opacity: 1; } } 
-@-moz-keyframes slideIn { from { width: 0px; opacity: 0; } to { width: 300px; opacity: 1; } } 
-@keyframes slideIn { from { width: 0px; opacity: 0; } to { width: 300px; opacity: 1; } }
-.search { 
+#searchbar { 
     width:300px;
     padding:3px 30px 2px 3px;
     margin:5px 5px 5px 5px;
     border-radius:15px; 
     -moz-border-radius:15px; 
     -webkit-border-radius:15px;
-    animation: slideIn 0.4s;
+    transition: all 0.35s;
 }
 
-/* .search_close { 
-    animation: slideIn 0.4s;
-    animation-direction: reverse
-} */
+#searchbar.close { 
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+} 

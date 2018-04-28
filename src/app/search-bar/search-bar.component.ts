@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+declare var $: any;
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -7,16 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  show_searchbar : boolean;
   constructor() { }
 
   ngOnInit() {
-    this.show_searchbar=false;
   }
 
   toggle_searchbar()
   {
-    this.show_searchbar=!this.show_searchbar;
+    $("#searchbar").toggleClass("close");
   }
 
 }
