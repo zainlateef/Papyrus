@@ -14,7 +14,7 @@ export class UserMenuComponent implements OnInit {
 
   toggleMenu()
   {
-    $("ul").toggleClass("close");
+    $("#menu").toggleClass("close");
   }
 
 

@@ -10,28 +10,7 @@ $content-animation: scale(0.7) rotateX(-230deg);
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Montserrat';
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  list-style:none;
-}
-
-li:hover fa{
-  font-size: 1.6em;
-  transition: 0.08s ease-out;
-}
-
-a.boxclose{
+.boxclose{
   float:right;
   cursor:pointer;
   color: #fff;
@@ -67,6 +46,9 @@ a.boxclose{
   backface-visibility: hidden;
   
   &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-flow: column wrap;
     height: 85vh;
@@ -77,11 +59,17 @@ a.boxclose{
       transform: translate(0, 0);
     }
   }
-  
+
   &__item {
     flex: 1;
     position: relative;
+    list-style:none;
   }
+
+  &__item:hover .icon{
+    font-size: 1.6em;
+    transition: 0.08s ease-out;
+  }  
   
   &__link {
     display: flex;
@@ -184,71 +172,6 @@ a.boxclose{
   }
 }
 
-.panel {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  
-  &__wrapper {
-    padding: 7vh 7vw;
-    perspective: 1000px;
-  }
-  
-  &__content {
-    will-change: transform;
-    transform: $content-animation;
-    transform-origin: center 80%;
-    opacity: 0;
-    transition: $ease;
-    
-    &--active {
-      transform: none;
-      opacity: 1;
-    }
-  }
-  
-  &__headline {
-    font-weight: 700;
-    opacity: 0.8;
-    font-size: 48px;
-    margin: 0 0 25px 0;
-  }
-  
-  p {
-    margin: 0 0 25px 0;
-    color: lighten(black, 10);
-    font-size: 24px;
-    max-width: 800px;
-    
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  
-  &__block {
-    height: 3px;
-    background: rgba(black, 0.2);
-    margin: 0 0 25px 0;
-  }
-  
-  @media (max-width: 640px) {
-    
-    &__headline {
-      font-size: 36px;
-    }
-    
-    &__wrapper {
-      padding: 10vh 10vw;
-    }
-    
-    p {
-      font-size: 16px;
-    }
-  }
-}
-
 .c-black
 {
   color:rgb(0, 0, 0);
@@ -284,22 +207,4 @@ a.boxclose{
 
 .b-yellow {
   background: $yellow;
-}
-
-.logo {
-  position: fixed;
-  bottom: 3vh;
-  right: 3vw;
-  z-index: 2;
-  
-  
-  img {
-    width: 65px;
-    transition: $ease;
-    transform: rotate(0);
-  
-    &:hover {
-      transform: rotate(180deg) scale(1.1);
-    }
-  }
 }

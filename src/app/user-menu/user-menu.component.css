@@ -1,8 +1,8 @@
-div
+.wrapper
 {
     display: inline-block;
 }
-ul
+#menu
 {
     position: absolute;
     right: 55px;
@@ -10,30 +10,23 @@ ul
     list-style: none;
     transition:  opacity 0.5s;
 }
-ul.close
+.close
 {
     opacity: 0;
     visibility: hidden;
 }
-li
+.menu_item
 {
     text-align: center;
     background-color: rgb(241, 233, 210);
     padding: 5px 5px 5px 5px;
 }
-li:hover
+.menu_item:hover
 {
     border: 1px outset rebeccapurple;
     cursor: pointer;
 }
-a:link
-{
-    text-decoration: none;
-}
-a:visited {
-    text-decoration: none;
-}
-fa 
+.icon
 {
     cursor: pointer;
 }
