@@ -1,6 +1,37 @@
 div
 {
-    display: grid;
+    display: inline-block;
+}
+ul
+{
+    position: absolute;
+    right: 60px;
+    top: 50px;
+    list-style: none;
+    transition:  opacity 0.5s;
+}
+ul.close
+{
+    opacity: 0;
+    visibility: hidden;
+}
+li
+{
+    text-align: center;
+    background-color: RGB(241, 233, 210);
+    padding: 5px 5px 5px 5px;
+}
+li:hover
+{
+    border: 1px outset rebeccapurple;
+    cursor: pointer;
+}
+a:link
+{
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
 }
 fa 
 {

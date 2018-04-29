@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+declare var $:any;
 @Component({
   selector: 'app-user-menu',
   templateUrl: './user-menu.component.html',
@@ -6,17 +7,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class UserMenuComponent implements OnInit {
   
-  show_menu : boolean;
-
   constructor() { }
 
   ngOnInit() {
-    this.show_menu=false;
   }
 
   toggleMenu()
   {
-    this.show_menu=!this.show_menu;
+    $("ul").toggleClass("close");
   }
 
 
