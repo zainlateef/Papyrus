@@ -2,8 +2,8 @@
 
 .main-body
 {
-    background-image:url("https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&h=350");
-    background-repeat: no-repeat;
+    background-image:url("https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?auto=compress&cs=tinysrgb&h=350");
+    background-repeat: repeat-y;
     background-size: cover;
     font-family: Arial;
     font-weight: 100;
