@@ -18,4 +18,10 @@ export class SearchBarComponent implements OnInit {
     $("#searchbar").toggleClass("close");
   }
 
+  onClickedOutside(e: Event)
+  {
+    console.log("clicked outside of it");
+    $("#searchbar").addClass("close");
+  }
+
 }

@@ -8,6 +8,7 @@ import { DragulaModule } from 'ng2-dragula';
 import { ExampleComponent } from './example/example.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserMenuComponent } from './user-menu/user-menu.component'
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UserMenuComponent } from './user-menu/user-menu.component'
     BrowserModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
-    DragulaModule
+    DragulaModule,
+    ClickOutsideModule
   ],
   providers: [],
   bootstrap: [AppComponent]
