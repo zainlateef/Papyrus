@@ -1,3 +1,11 @@
+<div class="top_right">
+  <div style="display: inline-block;">
+      <app-search-bar></app-search-bar>
+  </div>
+  <div style="display: inline-block;">
+      <app-user-menu></app-user-menu>
+  </div>
+</div>
 <nav class="nav">
     <div #burger class="burger" (click)="openMenu()">
       <div class="burger__patty"></div>
@@ -5,11 +13,11 @@
   
     <ul #nav__list class="nav__list" [dragula]='"first-bag"'>
       <li class="nav__item">
-        <!-- <a class="boxclose" id="boxclose"></a> -->
+        <a class="boxclose" id="boxclose"></a>
         <a href="#1" class="nav__link c-black"><fa class="icon" name="cog" animation="spin"></fa></a>
       </li>
       <li class="nav__item">
-        <!-- <a class="boxclose" id="boxclose"></a> -->
+        <a class="boxclose" id="boxclose"></a>
         <a href="#2" class="nav__link c-black scrolly"><fa class="icon" name="bolt" animation="spin"></fa></a>
       </li>
       <li class="nav__item">
