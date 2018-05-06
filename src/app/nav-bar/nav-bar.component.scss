@@ -29,7 +29,11 @@ $content-animation: scale(0.7) rotateX(-230deg);
 .boxclose:before {
   content: "×";
 }
-
+.wrapper
+{
+  position: fixed;
+  width: 100%;
+}
 .top_right
 {
   float: right;
