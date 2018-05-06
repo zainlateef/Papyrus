@@ -9,13 +9,20 @@ export class UserMenuComponent implements OnInit {
   
   constructor() { }
 
+  closed : boolean;
   ngOnInit() {
   }
 
   toggleMenu()
   {
+    console.log("toggling class menu")
     $("#menu").toggleClass("close");
   }
 
+  onClickedOutside(e: Event)
+  {
+    console.log("clicked outside of menu");
+    $("#menu").addClass("close");
+  }
 
 }
