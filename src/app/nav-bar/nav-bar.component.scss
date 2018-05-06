@@ -95,7 +95,7 @@ $content-animation: scale(0.7) rotateX(-230deg);
     width: 70px;
     
     &__list {
-      height: 90vh;
+    //   height: 90vh;
     }
   }
 }
@@ -163,7 +163,7 @@ $content-animation: scale(0.7) rotateX(-230deg);
   }
   
   @media (max-width: 640px) {
-    height: 10vh;
+    // height: 10vh;
     
     &__patty {
       transform: scale(0.8);
