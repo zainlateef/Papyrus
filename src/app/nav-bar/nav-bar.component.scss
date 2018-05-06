@@ -12,6 +12,7 @@ $content-animation: scale(0.7) rotateX(-230deg);
 
 .boxclose{
   float:right;
+  position: relative;
   cursor:pointer;
   color: #fff;
   border: 1px solid #AEAEAE;
@@ -23,7 +24,14 @@ $content-animation: scale(0.7) rotateX(-230deg);
   //font-weight: bold;
   //display: inline-block;
   line-height: 0px;
-  padding: 7px 3px;       
+  padding: 7px 3px; 
+  @media (max-width: 640px)     
+  {
+    margin-top: 5px;
+    border-radius: 7px;
+    font-size:7px;
+    padding: 3px 1px;
+  } 
 }
 
 .boxclose:before {
