@@ -33,8 +33,13 @@ $content-animation: scale(0.7) rotateX(-230deg);
 .top_right
 {
   float: right;
+  z-index: 1;
   margin-top: 15px;
   margin-right: 110px;
+  @media (max-width: 640px) {
+    margin-right: 55px;
+  }
+  //on media query, change the right margin, the list placement, and the searchbar length
 }
 
 .nav {

@@ -8,6 +8,10 @@
     -moz-border-radius:15px; 
     -webkit-border-radius:15px;
     transition: all 0.35s;
+    @media(max-width: 640px) 
+    {
+        width: 130px;
+    }
 }
 
 #searchbar.close { 
