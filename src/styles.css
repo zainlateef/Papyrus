@@ -2,6 +2,7 @@
 @import '~normalize.css/normalize.css';
 .main-body
 {
+    width: 100%;
     background-image:url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/new-japanese-artistic-cloud-of-yokoyama-taikan-sawako-utsumi.jpg");
     background-repeat: repeat-y;
     background-size: cover;
