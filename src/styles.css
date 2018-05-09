@@ -6,6 +6,7 @@
     background-image:url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/new-japanese-artistic-cloud-of-yokoyama-taikan-sawako-utsumi.jpg");
     background-repeat: repeat-y;
     background-size: cover;
+    background-attachment: fixed;
     font-family: Arial;
     font-weight: 100;
 }
