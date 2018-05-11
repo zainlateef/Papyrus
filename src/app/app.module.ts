@@ -9,6 +9,7 @@ import { ExampleComponent } from './example/example.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserMenuComponent } from './user-menu/user-menu.component'
 import { ClickOutsideModule } from 'ng-click-outside';
+import { ProfPicComponent } from './prof-pic/prof-pic.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ClickOutsideModule } from 'ng-click-outside';
     NavBarComponent,
     ExampleComponent,
     SearchBarComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    ProfPicComponent
   ],
   imports: [
     BrowserModule,

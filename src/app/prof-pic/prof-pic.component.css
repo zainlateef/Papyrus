@@ -1,0 +1,9 @@
+img
+{
+    width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
+    border-style: groove;
+    border-color:pink;
+    border-width: 3px;
+}
