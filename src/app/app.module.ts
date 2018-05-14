@@ -10,6 +10,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserMenuComponent } from './user-menu/user-menu.component'
 import { ClickOutsideModule } from 'ng-click-outside';
 import { ProfPicComponent } from './prof-pic/prof-pic.component';
+import { QuillComponent } from './quill/quill.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfPicComponent } from './prof-pic/prof-pic.component';
     ExampleComponent,
     SearchBarComponent,
     UserMenuComponent,
-    ProfPicComponent
+    ProfPicComponent,
+    QuillComponent
   ],
   imports: [
     BrowserModule,
