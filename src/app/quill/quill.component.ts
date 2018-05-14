@@ -10,9 +10,22 @@ export class QuillComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    var quill = new Quill('#editor', {
-      theme: 'snow'
-    });
+    var toolbarOptions = [
+      [{ 'size': ['small', false, 'large'] },
+      { 'color': [] }, { 'background': [] }, 
+      'bold', 'italic', 'underline',
+      'code-block','formula', 'image',               // custom button values
+      {'list': 'ordered'}, { 'list': 'bullet' },
+      { 'align': [] }],                                     // remove formatting button
+    ];    
+    var options = {
+      theme: 'snow',
+      modules: {
+        toolbar: toolbarOptions
+      },
+      placeholder: 'Random generated message similar to the toolbar'
+     }
+    var quill = new Quill('#editor', options);
   }
 
 }
