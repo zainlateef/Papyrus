@@ -11,6 +11,7 @@ import { UserMenuComponent } from './user-menu/user-menu.component'
 import { ClickOutsideModule } from 'ng-click-outside';
 import { ProfPicComponent } from './prof-pic/prof-pic.component';
 import { QuillComponent } from './quill/quill.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { QuillComponent } from './quill/quill.component';
     SearchBarComponent,
     UserMenuComponent,
     ProfPicComponent,
-    QuillComponent
+    QuillComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
