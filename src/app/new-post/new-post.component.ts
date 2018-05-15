@@ -18,7 +18,7 @@ export class NewPostComponent implements OnInit {
       'image',              
       {'list': 'ordered'}, { 'list': 'bullet' },
       { 'align': [] },
-      ['publish']                                 
+      'publish'                            
     ];    
     var options = {
       theme: 'snow',

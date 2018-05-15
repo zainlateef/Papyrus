@@ -5,6 +5,7 @@
 #new-post
 {
     background: wheat;
+    overflow: scroll;
 }
 .ql-publish::after
 {
