@@ -6,3 +6,7 @@
 {
     background: wheat;
 }
+.ql-publish::after
+{
+    content: "publish";
+}

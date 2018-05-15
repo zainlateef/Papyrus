@@ -9,14 +9,16 @@ export class NewPostComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     var toolbarOptions = [
-      [{ 'size': ['small', false, 'large'] },
+      { 'size': ['small', false, 'large'] },
       { 'color': [] }, { 'background': [] }, 
       'bold', 'italic', 'underline',
-      'code-block','formula', 'image',               // custom button values
+      'image',              
       {'list': 'ordered'}, { 'list': 'bullet' },
-      { 'align': [] }],                                     // remove formatting button
+      { 'align': [] },
+      ['publish']                                 
     ];    
     var options = {
       theme: 'snow',
