@@ -20,6 +20,7 @@ export class NewPostComponent implements OnInit {
       { 'align': [] },
       'publish'                            
     ];    
+
     var options = {
       theme: 'snow',
       modules: {
@@ -27,7 +28,11 @@ export class NewPostComponent implements OnInit {
       },
       placeholder: 'Random generated message similar to the toolbar'
      }
+
     var quill = new Quill('#new-post', options);
+
+    var publish=document.getElementsByClassName("ql-publish");
+    publish.item[0].innerHTML="hi";
   }
 
 }

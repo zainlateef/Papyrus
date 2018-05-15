@@ -7,7 +7,3 @@
     background: wheat;
     overflow: scroll;
 }
-.ql-publish::after
-{
-    content: "publish";
-}
