@@ -30,8 +30,6 @@ export class NewPostComponent implements OnInit {
      }
 
     var quill = new Quill('#new-post', options);
-
-    var publish=document.getElementsByClassName("ql-publish");
   }
 
 }
