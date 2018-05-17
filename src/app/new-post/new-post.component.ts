@@ -15,7 +15,7 @@ export class NewPostComponent implements OnInit {
       { 'size': ['small', false, 'large'] },
       { 'color': [] }, { 'background': [] }, 
       'bold', 'italic', 'underline',
-      'image',              
+      'image', 'video',          
       {'list': 'ordered'}, { 'list': 'bullet' },
       { 'align': [] },
       'publish'                            
