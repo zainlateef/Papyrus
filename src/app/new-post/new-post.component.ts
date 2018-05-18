@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageDrop } from 'quill-image-drop-module';
 declare var Quill:any;
 @Component({
   selector: 'new-post',
@@ -11,6 +12,7 @@ export class NewPostComponent implements OnInit {
 
   ngOnInit() 
   {
+    Quill.register('modules/imageDrop', ImageDrop);
     var toolbarOptions = [
       { 'size': ['small', false, 'large'] },
       { 'color': [] }, { 'background': [] }, 
@@ -24,7 +26,8 @@ export class NewPostComponent implements OnInit {
     var options = {
       theme: 'snow',
       modules: {
-        toolbar: toolbarOptions
+        toolbar: toolbarOptions,
+        imageDrop: true
       },
       bounds: '#new-post',
       placeholder: 'Random generated message similar to the toolbar'
