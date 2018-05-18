@@ -26,6 +26,7 @@ export class NewPostComponent implements OnInit {
       modules: {
         toolbar: toolbarOptions
       },
+      bounds: '#new-post',
       placeholder: 'Random generated message similar to the toolbar'
      }
 
