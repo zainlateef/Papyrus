@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageDrop } from 'quill-image-drop-module';
+import ImageResize from 'quill-image-resize-module';
+
 declare var Quill:any;
+
 @Component({
   selector: 'new-post',
   templateUrl: './new-post.component.html',
   styleUrls: ['./new-post.component.css']
 })
+
 export class NewPostComponent implements OnInit {
 
   constructor() { }
@@ -13,11 +17,13 @@ export class NewPostComponent implements OnInit {
   ngOnInit() 
   {
     Quill.register('modules/imageDrop', ImageDrop);
+    Quill.register('modules/imageResize', ImageResize);
+
     var toolbarOptions = [
       { 'size': ['small', false, 'large'] },
       { 'color': [] }, { 'background': [] }, 
       'bold', 'italic', 'underline',
-      'image', 'video',          
+      'video',          
       {'list': 'ordered'}, { 'list': 'bullet' },
       { 'align': [] },
       'publish'                            
@@ -27,7 +33,8 @@ export class NewPostComponent implements OnInit {
       theme: 'snow',
       modules: {
         toolbar: toolbarOptions,
-        imageDrop: true
+        imageDrop: true,
+        imageResize: { parchment : Quill.import('parchment')}
       },
       bounds: '#new-post',
       placeholder: 'Random generated message similar to the toolbar'
