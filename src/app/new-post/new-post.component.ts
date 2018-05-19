@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImageDrop } from 'quill-image-drop-module';
 import ImageResize from 'quill-image-resize-module';
+import MagicUrl from 'quill-magic-url';
 
 declare var Quill:any;
 
@@ -18,6 +19,7 @@ export class NewPostComponent implements OnInit {
   {
     Quill.register('modules/imageDrop', ImageDrop);
     Quill.register('modules/imageResize', ImageResize);
+    Quill.register('modules/magicUrl', MagicUrl);
 
     var toolbarOptions = [
       { 'size': ['small', false, 'large'] },
@@ -34,7 +36,8 @@ export class NewPostComponent implements OnInit {
       modules: {
         toolbar: toolbarOptions,
         imageDrop: true,
-        imageResize: { parchment : Quill.import('parchment')}
+        imageResize: { parchment : Quill.import('parchment')},
+        magicUrl: true
       },
       bounds: '#new-post',
       placeholder: 'Random generated message similar to the toolbar'
