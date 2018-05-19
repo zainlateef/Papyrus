@@ -15,13 +15,13 @@ export class UserMenuComponent implements OnInit {
 
   toggleMenu()
   {
-    console.log("toggling class menu")
+    // console.log("toggling class menu")
     $("#menu").toggleClass("close");
   }
 
   onClickedOutside(e: Event)
   {
-    console.log("clicked outside of menu");
+    // console.log("clicked outside of menu");
     $("#menu").addClass("close");
   }
 

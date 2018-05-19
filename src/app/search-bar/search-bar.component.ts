@@ -20,7 +20,7 @@ export class SearchBarComponent implements OnInit {
 
   onClickedOutside(e: Event)
   {
-    console.log("clicked outside of it");
+    // console.log("clicked outside of it");
     $("#searchbar").addClass("close");
   }
 
