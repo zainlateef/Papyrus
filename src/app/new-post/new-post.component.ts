@@ -22,7 +22,7 @@ export class NewPostComponent implements OnInit {
     Quill.register('modules/magicUrl', MagicUrl);
 
     var toolbarOptions = [
-      { 'size': ['small', false, 'large'] },
+      { 'size': ['small', false, 'large','huge'] },
       { 'color': [] }, { 'background': [] }, 
       'bold', 'italic', 'underline',
       'video',          
