@@ -9,6 +9,7 @@
 # dependencies
 /node_modules/*
 !/node_modules/quill
+!/node_modules/quill-magic-url
 
 # IDEs and editors
 /.idea
