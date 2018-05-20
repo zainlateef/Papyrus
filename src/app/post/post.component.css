@@ -2,7 +2,8 @@
 {
     width : 80%;
 }
-#editor
+#post
 {
     background: wheat;
+    overflow: scroll;
 }

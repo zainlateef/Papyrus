@@ -10,8 +10,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { UserMenuComponent } from './user-menu/user-menu.component'
 import { ClickOutsideModule } from 'ng-click-outside';
 import { ProfPicComponent } from './prof-pic/prof-pic.component';
-import { QuillComponent } from './quill/quill.component';
 import { NewPostComponent } from './new-post/new-post.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +21,8 @@ import { NewPostComponent } from './new-post/new-post.component';
     SearchBarComponent,
     UserMenuComponent,
     ProfPicComponent,
-    QuillComponent,
-    NewPostComponent
+    NewPostComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
