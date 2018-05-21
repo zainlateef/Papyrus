@@ -54,6 +54,12 @@ export class PostComponent implements OnInit {
      }
 
     this.quill = new Quill('#post', options);
+
+    //to destroy, take the innerhtml out of the editor, 
+    //destroy the wrapper instance, recreate the wrapper 
+    //and the div and reinsert the text into the div.
+    //in the live version the innerhtml will be sent to the server and 
+    //recieved by the div. how do we differentiate wrapper instances?
   }
 
 
