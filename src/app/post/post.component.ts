@@ -22,6 +22,14 @@ export class PostComponent implements OnInit {
     Quill.register('modules/imageDrop', ImageDrop);
     Quill.register('modules/imageResize', ImageResize);
     Quill.register('modules/magicUrl', MagicUrl);
+    //toggle this when the correct user clicks on it
+    // this.quill.enable(false);
+
+  }
+
+  initialize_editor()
+  {
+    console.log("DOUBLE CLICKED");
 
     var toolbarOptions = [
       { 'size': ['small', false, 'large','huge'] },
@@ -46,10 +54,8 @@ export class PostComponent implements OnInit {
      }
 
     this.quill = new Quill('#post', options);
-
-    //toggle this when the correct user clicks on it
-    this.quill.enable(false);
-
   }
+
+
 
 }
