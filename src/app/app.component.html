@@ -2,15 +2,15 @@
 <div style="clear: right; min-height: 1px"></div>
 
 <div class="main_container" style="background-color: red">
-    <!-- <app-prof-pic class="prof_pic"></app-prof-pic>
-    THE FEED THAT IS RELOADED EVERY TIME
+    <app-prof-pic class="prof_pic"></app-prof-pic>
+    <!-- THE FEED THAT IS RELOADED EVERY TIME -->
     <h1>Title</h1>
     <h3>Description</h3>
     <new-post></new-post>
     <post></post>
     <post></post>
     <ul style="list-style: none">
-    </ul> -->
+    </ul>
     <ul style="list-style-type: none;">
         <li *ngFor="let letter of dummy_list; index as i">
             <post [post_id]="'post'+i"></post>
