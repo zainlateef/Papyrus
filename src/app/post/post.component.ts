@@ -30,6 +30,7 @@ export class PostComponent implements OnInit {
 
   initialize_editor()
   {
+    console.log("double clicked in "+this.post_id)
     var toolbarOptions = [
       { 'size': ['small', false, 'large','huge'] },
       { 'color': [] }, { 'background': [] }, 

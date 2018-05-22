@@ -2,7 +2,7 @@
 {
     width : 80%;
 }
-#post
+.post
 {
     background: wheat;
     overflow: scroll;
