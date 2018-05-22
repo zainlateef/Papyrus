@@ -13,25 +13,45 @@ declare var Quill:any;
 
 export class PostComponent implements OnInit {
 
+
   constructor() { }
   @Input('post_id') post_id : any;
   quill : any;
+  toolbarOptions : any;
+  options : any;
+  show_editor : boolean;
 
   ngOnInit() 
   {
-    Quill.register('modules/imageDrop', ImageDrop);
-    Quill.register('modules/imageResize', ImageResize);
-    Quill.register('modules/magicUrl', MagicUrl);
-    console.log(this.post_id);
-    //toggle this when the correct user clicks on it
-    // this.quill.enable(false);
+     this.quill_setup();
+     this.show_editor=false;
+  }
 
+  toggle_editor()
+  {
+    console.log("double clicked in "+this.post_id)
+    this.show_editor=!this.show_editor;
+    if(this.show_editor)
+    {
+      this.quill = new Quill('#'+this.post_id, this.options);
+    }
+    else
+    {
+      //teardown
+    }
   }
 
   initialize_editor()
   {
-    console.log("double clicked in "+this.post_id)
-    var toolbarOptions = [
+    this.quill = new Quill('#'+this.post_id, this.options);
+    console.log("inner html"+this.quill.root.innerHTML);
+  }
+
+  quill_setup(){
+    Quill.register('modules/imageDrop', ImageDrop);
+    Quill.register('modules/imageResize', ImageResize);
+    Quill.register('modules/magicUrl', MagicUrl);
+    this.toolbarOptions = [
       { 'size': ['small', false, 'large','huge'] },
       { 'color': [] }, { 'background': [] }, 
       'bold', 'italic', 'underline',
@@ -41,26 +61,17 @@ export class PostComponent implements OnInit {
       'publish'                            
     ];    
 
-    var options = {
+    this.options = {
       theme: 'snow',
       modules: {
-        toolbar: toolbarOptions,
+        toolbar: this.toolbarOptions,
         imageDrop: true,
         imageResize: { parchment : Quill.import('parchment')},
         magicUrl: true
       },
-      bounds: '#post',
+      bounds: '#'+this.post_id,
       placeholder: 'Random generated message similar to the toolbar'
      }
-
-    this.quill = new Quill('#'+this.post_id, options);
-    console.log(this.quill.innerhtml);
-
-    //to destroy, take the innerhtml out of the editor, 
-    //destroy the wrapper instance, recreate the wrapper 
-    //and the div and reinsert the text into the div.
-    //in the live version the innerhtml will be sent to the server and 
-    //recieved by the div. how do we differentiate wrapper instances?
   }
 
 
