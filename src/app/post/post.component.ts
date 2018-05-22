@@ -22,16 +22,15 @@ export class PostComponent implements OnInit {
 
   ngOnInit() 
   {
-     this.quill_setup();
      this.show_editor=false;
   }
 
   toggle_editor()
   {
-    console.log("double clicked in "+this.post_id)
     this.show_editor=!this.show_editor;
     if(this.show_editor)
     {
+      this.quill_setup();
       this.quill = new Quill('#'+this.post_id, this.options);
     }
     else
@@ -41,6 +40,18 @@ export class PostComponent implements OnInit {
       //iterate through, remove everything except for wrapper and post, remove ql-editor and ql-snow class from post
       //probably have to reinsert html into post
     }
+  }
+
+  quill_destroy() {
+    $('#wrapper-'+this.post_id).find("*").each(
+      function()
+      {
+          if(!$(this).hasClass("post"))
+          this.remove();
+          else
+          $(this).removeClass("ql-editor ql-snow");
+      }
+    );
   }
 
   quill_setup(){
@@ -69,19 +80,5 @@ export class PostComponent implements OnInit {
       placeholder: 'Random generated message similar to the toolbar'
      }
   }
-
-  quill_destroy() {
-    $('#wrapper-'+this.post_id).find("*").each(
-      function()
-      {
-          if(!$(this).hasClass("post"))
-          this.remove();
-          else
-          $(this).removeClass("ql-editor ql-snow");
-      }
-    );
-  }
-
-
 
 }
