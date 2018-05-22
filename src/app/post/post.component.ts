@@ -37,14 +37,19 @@ export class PostComponent implements OnInit {
     }
     else
     {
-      
+      $('#wrapper-'+this.post_id).find("*").each(
+        function()
+        {
+            if(!$(this).hasClass("post"))
+            this.remove();
+            else
+            $(this).removeClass("ql-editor ql-snow");
+        }
+      );
+      //teardown
+      //iterate through, remove everything except for wrapper and post, remove ql-editor and ql-snow class from post
+      //probably have to reinsert html into post
     }
-  }
-
-  initialize_editor()
-  {
-    this.quill = new Quill('#'+this.post_id, this.options);
-    console.log("inner html"+this.quill.root.innerHTML);
   }
 
   quill_setup(){
