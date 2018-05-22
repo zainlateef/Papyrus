@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ImageDrop } from 'quill-image-drop-module';
 import ImageResize from 'quill-image-resize-module';
 import MagicUrl from 'quill-magic-url';
-
+declare var $:any;
 declare var Quill:any;
 
 @Component({
@@ -52,16 +52,28 @@ export class NewPostComponent implements OnInit {
   embed_media()
   {
     this.quill.on('text-change', function(delta, oldDelta, source) {
-      if (source == 'api') 
-      {
-        console.log("An API call triggered this change.");
-      } 
-      else if (source == 'user') 
-      {
-        console.log("A user action triggered this change.");
         var pasted_text=delta.ops[1].insert;
-        
-      }
+        console.log(pasted_text)
+        var soundcloud_regex=/^https?:\/\/(soundcloud\.com|snd\.sc)\/(.*)$/;
+        if(pasted_text.match(soundcloud_regex) && pasted_text.match(soundcloud_regex)[2])
+        {
+          console.log("soundcloud link detected");
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "http://soundcloud.com/oembed",
+            "method": "POST",
+            "headers": {},
+            "data": {
+              "format": "json",
+              "url": pasted_text
+            }
+          }
+          
+          $.ajax(settings).done(function (response) {
+            console.log("this is the response:"+JSON.stringify(response));
+          });
+        }
     });
   }
 
