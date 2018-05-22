@@ -13,7 +13,6 @@ declare var $: any;
 
 export class PostComponent implements OnInit {
 
-
   constructor() { }
   @Input('post_id') post_id : any;
   quill : any;
@@ -37,15 +36,7 @@ export class PostComponent implements OnInit {
     }
     else
     {
-      $('#wrapper-'+this.post_id).find("*").each(
-        function()
-        {
-            if(!$(this).hasClass("post"))
-            this.remove();
-            else
-            $(this).removeClass("ql-editor ql-snow");
-        }
-      );
+      this.quill_destroy();
       //teardown
       //iterate through, remove everything except for wrapper and post, remove ql-editor and ql-snow class from post
       //probably have to reinsert html into post
@@ -77,6 +68,18 @@ export class PostComponent implements OnInit {
       bounds: '#'+this.post_id,
       placeholder: 'Random generated message similar to the toolbar'
      }
+  }
+
+  quill_destroy() {
+    $('#wrapper-'+this.post_id).find("*").each(
+      function()
+      {
+          if(!$(this).hasClass("post"))
+          this.remove();
+          else
+          $(this).removeClass("ql-editor ql-snow");
+      }
+    );
   }
 
 
