@@ -54,6 +54,7 @@ export class PostComponent implements OnInit {
      }
 
     this.quill = new Quill('#'+this.post_id, options);
+    console.log(this.quill.innerhtml);
 
     //to destroy, take the innerhtml out of the editor, 
     //destroy the wrapper instance, recreate the wrapper 
