@@ -62,7 +62,7 @@ export class PostComponent implements OnInit {
       { 'size': ['small', false, 'large','huge'] },
       { 'color': [] }, { 'background': [] }, 
       'bold', 'italic', 'underline',
-      'video',          
+      'video', 'link',         
       {'list': 'ordered'}, { 'list': 'bullet' },
       { 'align': [] },
       'publish'                            

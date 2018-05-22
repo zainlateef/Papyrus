@@ -15,6 +15,8 @@ export class NewPostComponent implements OnInit {
 
   constructor() { }
 
+  quill : any;
+
   ngOnInit() 
   {
     Quill.register('modules/imageDrop', ImageDrop);
@@ -25,7 +27,7 @@ export class NewPostComponent implements OnInit {
       { 'size': ['small', false, 'large','huge'] },
       { 'color': [] }, { 'background': [] }, 
       'bold', 'italic', 'underline',
-      'video',          
+      'video', 'link',  
       {'list': 'ordered'}, { 'list': 'bullet' },
       { 'align': [] },
       'publish'                            
@@ -43,13 +45,22 @@ export class NewPostComponent implements OnInit {
       placeholder: 'Random generated message similar to the toolbar'
      }
 
-    var quill = new Quill('#new-post', options);
-
-    quill.on('text-change', function(delta, oldDelta, source) {
-      if (source == 'api') {
+    this.quill = new Quill('#new-post', options);
+    this.embed_media();
+  }
+  
+  embed_media()
+  {
+    this.quill.on('text-change', function(delta, oldDelta, source) {
+      if (source == 'api') 
+      {
         console.log("An API call triggered this change.");
-      } else if (source == 'user') {
+      } 
+      else if (source == 'user') 
+      {
         console.log("A user action triggered this change.");
+        var pasted_text=delta.ops[1].insert;
+        
       }
     });
   }
