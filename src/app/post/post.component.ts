@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ImageDrop } from 'quill-image-drop-module';
 import ImageResize from 'quill-image-resize-module';
 import MagicUrl from 'quill-magic-url';
@@ -14,7 +14,7 @@ declare var Quill:any;
 export class PostComponent implements OnInit {
 
   constructor() { }
-
+  @Input('post_id') post_id : any;
   quill : any;
 
   ngOnInit() 
@@ -22,6 +22,7 @@ export class PostComponent implements OnInit {
     Quill.register('modules/imageDrop', ImageDrop);
     Quill.register('modules/imageResize', ImageResize);
     Quill.register('modules/magicUrl', MagicUrl);
+    console.log(this.post_id);
     //toggle this when the correct user clicks on it
     // this.quill.enable(false);
 
@@ -29,8 +30,6 @@ export class PostComponent implements OnInit {
 
   initialize_editor()
   {
-    console.log("DOUBLE CLICKED");
-
     var toolbarOptions = [
       { 'size': ['small', false, 'large','huge'] },
       { 'color': [] }, { 'background': [] }, 
@@ -53,7 +52,7 @@ export class PostComponent implements OnInit {
       placeholder: 'Random generated message similar to the toolbar'
      }
 
-    this.quill = new Quill('#post', options);
+    this.quill = new Quill('#'+this.post_id, options);
 
     //to destroy, take the innerhtml out of the editor, 
     //destroy the wrapper instance, recreate the wrapper 
