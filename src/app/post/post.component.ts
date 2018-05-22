@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ImageDrop } from 'quill-image-drop-module';
 import ImageResize from 'quill-image-resize-module';
 import MagicUrl from 'quill-magic-url';
-
 declare var Quill:any;
+declare var $: any;
 
 @Component({
   selector: 'post',
@@ -37,7 +37,7 @@ export class PostComponent implements OnInit {
     }
     else
     {
-      //teardown
+      
     }
   }
 
