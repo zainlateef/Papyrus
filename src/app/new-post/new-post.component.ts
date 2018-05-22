@@ -44,6 +44,14 @@ export class NewPostComponent implements OnInit {
      }
 
     var quill = new Quill('#new-post', options);
+
+    quill.on('text-change', function(delta, oldDelta, source) {
+      if (source == 'api') {
+        console.log("An API call triggered this change.");
+      } else if (source == 'user') {
+        console.log("A user action triggered this change.");
+      }
+    });
   }
 
 }
