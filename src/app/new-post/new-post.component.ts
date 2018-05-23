@@ -66,9 +66,10 @@ export class NewPostComponent implements OnInit {
         var twitter_regex=/^https?:\/\/twitter\.com\/(.*)\/status\/(.*)$/;
         console.log("twitter demo:"+JSON.stringify(pasted_text.match(twitter_regex)));
         if(pasted_text.match(soundcloud_regex) && pasted_text.match(soundcloud_regex)[2])
-        {
           NewPostComponent.insert_soundcloud(pasted_text,index);
-        }
+        else if(pasted_text.match(twitter_regex))
+          NewPostComponent.insert_twitter(pasted_text,index,pasted_text.match(twitter_regex)[2]);
+
     });
   }
 
@@ -96,5 +97,10 @@ export class NewPostComponent implements OnInit {
       NewPostComponent.quill.insertEmbed(pasted_text.length+index,'video',url);
     });
   }
+
+  static insert_twitter(pasted_text: String, index : number, id : number) {
+    console.log("found "+pasted_text+" at "+index+" with id"+id);
+  }
+
 
 }
