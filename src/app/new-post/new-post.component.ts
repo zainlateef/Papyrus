@@ -4,6 +4,7 @@ import ImageResize from 'quill-image-resize-module';
 import MagicUrl from 'quill-magic-url';
 declare var $:any;
 declare var Quill:any;
+declare var twttr:any;
 
 @Component({
   selector: 'new-post',
@@ -22,6 +23,25 @@ export class NewPostComponent implements OnInit {
     Quill.register('modules/imageDrop', ImageDrop);
     Quill.register('modules/imageResize', ImageResize);
     Quill.register('modules/magicUrl', MagicUrl);
+    let BlockEmbed = Quill.import('blots/block/embed');
+
+    class TweetBlot extends BlockEmbed {
+      static create(id) {
+        let node = super.create();
+        node.dataset.id = id;
+        twttr.widgets.createTweet(id, node);
+        return node;
+      }
+      
+      static value(domNode) {
+        return domNode.dataset.id;
+      }
+    }
+    TweetBlot.blotName = 'tweet';
+    TweetBlot.tagName = 'div';
+    TweetBlot.className = 'tweet';
+
+    Quill.register(TweetBlot);
 
     var toolbarOptions = [
       { 'size': ['small', false, 'large','huge'] },
@@ -98,8 +118,11 @@ export class NewPostComponent implements OnInit {
     });
   }
 
-  static insert_twitter(pasted_text: String, index : number, id : number) {
-    console.log("found "+pasted_text+" at "+index+" with id"+id);
+  static insert_twitter(pasted_text: String, index : number, id : number) 
+  {
+    NewPostComponent.quill.insertEmbed(pasted_text.length+index, 'tweet', id);
+    // $(".tweet").css("margin","auto");
+    // $(".tweet").css("width","50%");
   }
 
 
