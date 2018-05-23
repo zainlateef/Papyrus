@@ -86,8 +86,12 @@ export class NewPostComponent implements OnInit {
     }
   
     $.ajax(settings).done(function (response) {
-      console.log("this is the response:"+JSON.stringify(response.html));
-      NewPostComponent.quill.insertText(pasted_text.length+index,"Fart",'bold');
+      console.log("this is the response:"+JSON.stringify(response));
+      // NewPostComponent.quill.insertText(pasted_text.length+index,"Fart",'bold');
+      var iframe=response.html;
+      var url=iframe.substring(iframe.lastIndexOf('src="')+5,iframe.lastIndexOf('\"><'));
+      console.log("URL:"+url);
+      NewPostComponent.quill.insertEmbed(pasted_text.length+index,'video',url);
     });
   }
 
