@@ -63,6 +63,8 @@ export class NewPostComponent implements OnInit {
         var pasted_text=delta.ops[1].insert;
 
         var soundcloud_regex=/^https?:\/\/(soundcloud\.com|snd\.sc)\/(.*)$/;
+        var twitter_regex=/^https?:\/\/twitter\.com\/(.*)\/status\/(.*)$/;
+        console.log("twitter demo:"+JSON.stringify(pasted_text.match(twitter_regex)));
         if(pasted_text.match(soundcloud_regex) && pasted_text.match(soundcloud_regex)[2])
         {
           NewPostComponent.insert_soundcloud(pasted_text,index);
