@@ -15,7 +15,7 @@ export class NewPostComponent implements OnInit {
 
   constructor() { }
 
-  quill : any;
+  static quill : any;
 
   ngOnInit() 
   {
@@ -45,35 +45,49 @@ export class NewPostComponent implements OnInit {
       placeholder: 'Random generated message similar to the toolbar'
      }
 
-    this.quill = new Quill('#new-post', options);
+    NewPostComponent.quill = new Quill('#new-post', options);
     this.embed_media();
   }
   
   embed_media()
   {
-    this.quill.on('text-change', function(delta, oldDelta, source) {
+    NewPostComponent.quill.on('text-change', function(delta, oldDelta, source) {
+        console.log(JSON.stringify(delta));
+        var index=delta.ops[0].retain;
+        if(!index)
+        {
+          var pasted_text=delta.ops[0].insert;
+          index=0;
+        }
+        else
         var pasted_text=delta.ops[1].insert;
-        console.log(pasted_text)
+
         var soundcloud_regex=/^https?:\/\/(soundcloud\.com|snd\.sc)\/(.*)$/;
         if(pasted_text.match(soundcloud_regex) && pasted_text.match(soundcloud_regex)[2])
         {
-          console.log("soundcloud link detected");
-          var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "http://soundcloud.com/oembed",
-            "method": "POST",
-            "headers": {},
-            "data": {
-              "format": "json",
-              "url": pasted_text
-            }
-          }
-          
-          $.ajax(settings).done(function (response) {
-            console.log("this is the response:"+JSON.stringify(response));
-          });
+          NewPostComponent.insert_soundcloud(pasted_text,index);
         }
+    });
+  }
+
+  static insert_soundcloud(pasted_text: String, index : number) {
+
+    console.log("soundcloud link detected");
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://soundcloud.com/oembed",
+      "method": "POST",
+      "headers": {},
+      "data": {
+        "format": "json",
+        "url": pasted_text
+      }
+    }
+  
+    $.ajax(settings).done(function (response) {
+      console.log("this is the response:"+JSON.stringify(response.html));
+      NewPostComponent.quill.insertText(pasted_text.length+index,"Fart",'bold');
     });
   }
 
